@@ -43,3 +43,17 @@ treemap.c:51:15: error: unused variable ‘parent’ [-Werror=unused-variable]
 cc1: all warnings being treated as errors
 Compilation failed
 a8f9d98
+Thu 09 May 2024 01:03:38 AM UTC: 
+ treemap.c | 9 +++++++++
+ 1 file changed, 9 insertions(+)
+In file included from test.c:4:
+treemap.c: In function ‘insertTreeMap’:
+treemap.c:60:15: error: unused variable ‘new’ [-Werror=unused-variable]
+   60 |     TreeNode *new = createTreeNode(key, value);
+      |               ^~~
+treemap.c:51:15: error: variable ‘parent’ set but not used [-Werror=unused-but-set-variable]
+   51 |     TreeNode *parent = NULL;
+      |               ^~~~~~
+cc1: all warnings being treated as errors
+Compilation failed
+2603e75
