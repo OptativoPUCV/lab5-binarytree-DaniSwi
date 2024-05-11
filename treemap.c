@@ -168,19 +168,14 @@ Pair *upperBound(TreeMap *tree, void *key) {
     TreeNode *test = NULL;
     while(aux != NULL){
         if(is_equal(tree,key,aux->pair->key)){
-            test = aux;
+            tree->current = aux;
             break;
-        }
-        if(tree->lower_than(key,aux->pair->key)==1)
-            aux = aux->left;
-        else{
+        } else if(tree->lower_than(key,aux->pair->key)==1){
             test = aux;
+            aux = aux->left;
+        } else 
             aux = aux->right;
-        }
-        
-        
     }
-    tree->current = aux;
     if(test == NULL)
         return NULL;
     return test->pair;
